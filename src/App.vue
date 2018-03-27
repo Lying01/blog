@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-header style="height: auto">Lying的个人博客</el-header>
+    <el-header style="height: auto"><bl-header></bl-header></el-header>
     <el-container>
       <el-aside width="200px">
         <img src="./assets/logo.png" width="150px"/>
@@ -51,14 +51,8 @@
         </el-menu>
       </el-aside>
       <el-container>
-        <div class="block">
-          <el-carousel height="350px">
-            <el-carousel-item v-for="item in 4" :key="item">
-              <!--<h3>{{ item }}</h3>-->
-            </el-carousel-item>
-          </el-carousel>
-        </div>
-        <el-table :data="tableData" showHeader=false>
+        <bl-carousel></bl-carousel>
+        <el-table :data="tableData">
           <el-table-column prop="date">
           </el-table-column>
           <el-table-column prop="name">
@@ -73,24 +67,36 @@
 </template>
 
 <script>
+import blHeader from './components/bl-header.vue'
+import blCarousel from './components/bl-carousel.vue'
 export default {
   name: 'App',
   data () {
-    const item = {
-      date: '2016-05-02',
-      name: '陈大牛',
-      address: '广东省珠海市香洲区吉大新村'
-    }
     return {
-      tableData: Array(20).fill(item)
+      tableData: Array(20).fill({
+        date: '2018-02-02',
+        name: '陈猪头',
+        address: '广东省珠海市香洲区吉大新村'
+      }),
+      msg: 'hello'
     }
+  },
+  computed: {
+  },
+  methods: {
+      click () {
+//          item = as ;
+      }
+  },
+  components: {
+    blHeader,
+    blCarousel
   }
 }
 </script>
 
-<style>
+<style lang="scss">
   .el-header, .el-footer {
-    /*background-color: #99CCFF;*/
     font-size: 3em;
     color: #333;
     text-align: center;
@@ -124,19 +130,5 @@ export default {
     line-height: 320px;
   }
 
-  .el-carousel__item:nth-child(2n) {
-    background-image: url("./assets/3.jpg");
-    background-repeat:no-repeat;
-    background-position: center;
-    background-size:auto 100%;
-    -moz-background-size:100% 100%;
-  }
 
-  .el-carousel__item:nth-child(2n+1) {
-    background-image: url("./assets/4.jpg");
-    background-repeat:no-repeat;
-    background-position: center;
-    background-size:auto 100%;
-    -moz-background-size:100% 100%;
-  }
 </style>

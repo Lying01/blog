@@ -1,0 +1,7 @@
+$width: 30px;
+$nav-color: #000000;
+nav {
+  $width: 100px;
+  width: $width;
+  color: $nav-color;
+}
