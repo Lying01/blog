@@ -46,6 +46,12 @@ module.exports = {
         loader: 'vue-loader',
         options: vueLoaderConfig
       },
+      // {
+      //   loader: 'sass-resources-loader',
+      //   options: {
+      //     resources: path.resolve(__dirname, '../src/style/_variables.scss')
+      //   }
+      // },
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -55,7 +61,8 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 10000
+          ,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
