@@ -1,6 +1,6 @@
-# blog
+# Cnode community
 
-> A Vue.js project for a blog
+> A Vue.js project for Cnode community.
 
 ## Build Setup
 
