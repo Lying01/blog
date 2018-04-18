@@ -1,12 +1,12 @@
 <template>
-  <div class="block">
+  <div>
     <!--<div class="el-carousel__summary">-->
       <!--<p>fawf</p>-->
     <!--</div>-->
-    <el-carousel height="350px">
+    <el-carousel>
       <el-carousel-item v-for="item in 4" :key="item">
         <div class="el-carousel__summary">
-          <p>《文章标题》</p>
+          <p>《【毕设】基于vue.js的广科IT技术交流社区》</p>
         </div>
       </el-carousel-item>
     </el-carousel>
@@ -21,6 +21,24 @@
   }
 </script>
 <style lang="scss">
+  /*.el-carousel__container{*/
+    /*height: 350px;*/
+  /*}*/
+  @media screen and (max-width: 992px){
+    /*.el-carousel__container{*/
+      /*height: 200px;*/
+    /*}*/
+    .el-carousel{
+      height: 200px;
+    }
+    .el-carousel__item{
+      height: 200px;
+    }
+    .el-carousel__summary p {
+      margin: 5px;
+      font-size: 16px;
+    }
+  }
   $carousel_photo1 : url("../assets/3.jpg") no-repeat center;
   $carousel_photo2 : url("../assets/5.jpg") no-repeat center;
 
@@ -53,7 +71,7 @@
     .el-carousel__summary{
       background-color:#000000;
       filter:Alpha(opacity=50);
-      position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+      position: static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
       *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
     }
     .el-carousel__summary p{
